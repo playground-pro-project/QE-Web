@@ -24,7 +24,7 @@ public class ProfilPage {
         emailBox.sendKeys(email);
     }
     public void setPassword(String password) {
-        emailBox.sendKeys(password);
+        passwordBox.sendKeys(password);
     }
     public void clickSignIn() {
         signInButton.click();
@@ -50,9 +50,29 @@ public class ProfilPage {
     @FindBy(xpath = "")
     private WebElement popupProfilPictureCantChanged;
     @FindBy(xpath = "")
+    private WebElement popupProfilPictureSuccessfullyDeleted;
+    @FindBy(xpath = "")
     private WebElement removePhotoButton;
     @FindBy(xpath = "")
     private WebElement deleteAccountButton;
+    @FindBy(xpath = "")
+    private WebElement settingButton;
+    @FindBy(xpath = "")
+    private WebElement changePasswordButton;
+    @FindBy(xpath = "")
+    private WebElement popupPassword;
+    @FindBy(xpath = "")
+    private WebElement oldPasswordBox;
+    @FindBy(xpath = "")
+    private WebElement newPasswordBox;
+    @FindBy(xpath = "")
+    private WebElement confirmPasswordBox;
+    @FindBy(xpath = "")
+    private WebElement submitButton;
+    @FindBy(xpath = "")
+    private WebElement passwordSuccessfullyChangedShow;
+    @FindBy(xpath = "")
+    private WebElement passwordFailedChangedShow;
     public void clickUploadaPhotoButton() {
         uploadaPhotoButton.click();
     }
@@ -62,10 +82,42 @@ public class ProfilPage {
     public boolean verifyProfilPictureCantChanged() {
         return popupProfilPictureCantChanged.isDisplayed();
     }
+    public boolean verifyProfilPictureSuccessfullyDeleted() {
+        return popupProfilPictureSuccessfullyDeleted.isDisplayed();
+    }
     public void clickRemovePhotoButton() {
         removePhotoButton.click();
     }
     public void clickDeleteAccountButton() {
         deleteAccountButton.click();
     }
+    public void clickSettingButton() {
+        settingButton.click();
+    }
+    public void clickChangePasswordButton() {
+        changePasswordButton.click();
+    }
+    public void verifyPopupPassword() {
+        popupPassword.isDisplayed();
+    }
+    public void setOldPassword(String oldPassword) {
+        oldPasswordBox.sendKeys(oldPassword);
+    }
+    public void setNewPassword(String newPassword) {
+        newPasswordBox.sendKeys(newPassword);
+    }
+    public void setConfirmPassword(String confirmPassword) {
+        confirmPasswordBox.sendKeys(confirmPassword);
+    }
+    public void clickSubmitChangePasswordButton() {
+        submitButton.click();
+    }
+    public void verifyPasswordSuccessfullyChanged() {
+        passwordSuccessfullyChangedShow.isDisplayed();
+    }
+    public void verifyPasswordFailedChanged() {
+        passwordFailedChangedShow.isDisplayed();
+    }
+
+
 }
