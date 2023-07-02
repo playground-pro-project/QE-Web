@@ -1,5 +1,4 @@
 package org.example.pageObject;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -64,12 +63,5 @@ public class VenueDetailPage {
     public boolean verifySuccessDeleteShow() {
         return successDeleteShow.isDisplayed();
     }
-
-
-
-
-
-
-
 
 }
