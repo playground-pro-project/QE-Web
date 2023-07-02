@@ -17,7 +17,7 @@ public class Hooks {
         WebDriverManager.chromedriver().setup();
         co.addArguments("--remote-allow-origins=*");
         webDriver = new ChromeDriver(co);
-        String URL = "
+        String URL = "https://fe-playground-pro-w5x6.vercel.app/";
         webDriver.get(URL);
         webDriver.manage().window().maximize();
     }
