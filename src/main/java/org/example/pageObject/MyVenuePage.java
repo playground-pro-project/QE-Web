@@ -41,7 +41,7 @@ public class MyVenuePage {
     private WebElement descriptionBasket201Box;
     @FindBy(xpath = "//button[@id='btn-save']")
     private WebElement saveButtonBasket201;
-    @FindBy(xpath = "//div[@class='swal2-success-ring']")
+    @FindBy(xpath = "//div[.='Edit Venue']")
     private WebElement successEditVenueBasket201;
     public void clickAddVenueButton() {
         addVenueButton.click();

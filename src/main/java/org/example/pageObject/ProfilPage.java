@@ -67,7 +67,7 @@ public class ProfilPage {
     private WebElement accountSuccessDeleteShow;
     @FindBy(xpath = "//label[@class='btn btn-wide btn-primary text-white']")
     private WebElement changePasswordButton;
-    @FindBy(xpath = "//p[contains(.,'Old Password:')]")
+    @FindBy(xpath = "//p[contains(.,'New Password:')]")
     private WebElement popupPassword;
     @FindBy(xpath = "//input[@id='old_password']")
     private WebElement oldPasswordBox;
