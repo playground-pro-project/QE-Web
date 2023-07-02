@@ -16,15 +16,16 @@ public class DropdownSteps {
     }
 
     //Positive Case 1
-    @When("user click 'Profil' buttons")
+    @And("user click 'Profil' buttons")
     public void clickProfilLogoDropdown() {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.clickProfilDropdown();
     }
     @And("selects 'Profil'")
-    public void clickProfilButton() {
+    public void clickProfilButton() throws InterruptedException {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.clickProfilButtonDropdown();
+        Thread.sleep(2000);
     }
     @Then("'Profil' pages is showed")
     public void verifyProfilPage() {
@@ -51,9 +52,10 @@ public class DropdownSteps {
         dropdownPage.clickBecomeOwnerButtonOnDropdown();
     }
     @Then("user will redirected to 'Became Owner' pages")
-    public void verifyBecomeOwner() {
+    public void verifyBecomeOwner() throws InterruptedException {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.verifyBecomeOwnerPage();
+        Thread.sleep(2000);
     }
 
     //Positive Case 4
@@ -61,6 +63,11 @@ public class DropdownSteps {
     public void clickLogout() {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.clicklogoutButtonOnDropdown();
+    }
+    @And("^click on 'Yes, Logout!' button$")
+    public void clickOnYesLogoutButton() {
+        DropdownPage dropdownPage = new DropdownPage(webDriver);
+        dropdownPage.clickpopUpYesLogoutButton();
     }
     @Then("user will redirected to 'Landing' pages")
     public void verifyLandingPage() {
@@ -70,13 +77,14 @@ public class DropdownSteps {
 
     //Positive Case 5
     @Given("Hoster already do logins with \"(.*)\" as email and \"(.*)\" as password")
-    public void loginProcess(String email, String password) {
+    public void loginProcess(String email, String password) throws InterruptedException {
         ProfilPage profilPage = new ProfilPage(webDriver);
         profilPage.setEmail(email);
         profilPage.setPassword(password);
         profilPage.clickSignIn();
+        Thread.sleep(3000);
     }
-    @When("Hoster click 'Profil' buttons")
+    @And("Hoster click 'Profil' buttons")
     public void clickProfilLogoDropdownHoster() {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.clickProfilDropdown();
@@ -84,14 +92,17 @@ public class DropdownSteps {
 
     //Positive Case 7
     @And("click on 'My Venue' buttons")
-    public void clickMyVenue() {
+    public void clickMyVenue() throws InterruptedException {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.clickmyVenueButtonOnDropdown();
+        Thread.sleep(2000);
     }
     @Then("user will redirected to 'My Venue' pages")
-    public void verifyMyVenuePage() {
+    public void verifyMyVenuePage() throws InterruptedException {
         DropdownPage dropdownPage = new DropdownPage(webDriver);
         dropdownPage.verifyMyVenuePage();
+        Thread.sleep(2000);
     }
+
 
 }

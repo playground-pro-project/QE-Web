@@ -20,19 +20,30 @@ public class EditProfilSteps {
         EditProfilPage editProfilPage = new EditProfilPage(webDriver);
         editProfilPage.verifyEditProfil();
     }
-    @When("user inputs \"(.*)\" as Name, \"(.*)\" as Email, \"(.*)\" as Phone")
+    @And("click 'Edit Profil' button")
+    public void clickEditProfilButton() {
+        EditProfilPage editProfilPage = new EditProfilPage(webDriver);
+        editProfilPage.clickEditProfilButtons();
+    }
+    @And("user inputs \"(.*)\" as Name, \"(.*)\" as Email, \"(.*)\" as Phone")
     public void inputFirstEdit(String name, String email, String phone) {
         EditProfilPage editProfilPage = new EditProfilPage(webDriver);
         editProfilPage.setName(name);
         editProfilPage.setEmail(email);
         editProfilPage.setPhone(phone);
     }
-    @And("inputs \"(.*)\" as Address, \"(.*)\" as Bio")
-    public void inputSecondEdit(String address, String bio) {
+    @And("user inputs \"(.*)\" as Name and \"(.*)\" as Phone")
+    public void inputFirstEditFewData(String name, String phone) {
         EditProfilPage editProfilPage = new EditProfilPage(webDriver);
-        editProfilPage.setAddress(address);
-        editProfilPage.setBio(bio);
+        editProfilPage.setName(name);
+        editProfilPage.setPhone(phone);
     }
+//    @And("inputs \"(.*)\" as Address, \"(.*)\" as Bio")
+//    public void inputSecondEdit(String address, String bio) {
+//        EditProfilPage editProfilPage = new EditProfilPage(webDriver);
+//        editProfilPage.setAddress(address);
+//        editProfilPage.setBio(bio);
+//    }
     @Then("user click on save buttons")
     public void clickSaveButton() {
         EditProfilPage editProfilPage = new EditProfilPage(webDriver);
@@ -43,12 +54,6 @@ public class EditProfilSteps {
         EditProfilPage editProfilPage = new EditProfilPage(webDriver);
         editProfilPage.verifySuccessPopup();
     }
-
-
-
-
-
-
 
 
 

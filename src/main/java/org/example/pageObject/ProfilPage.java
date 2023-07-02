@@ -12,13 +12,19 @@ public class ProfilPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+    //Landing Page
+    @FindBy(xpath = "//button[@class='mr-4 btn btn-warning']")
+    private WebElement loginButtonOnLandingPage;
+    public void clickLoginButtonOnLandingPage() {
+        loginButtonOnLandingPage.click();
+    }
 
     //Login Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='email']")
     private WebElement emailBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='password']")
     private WebElement passwordBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[@id='btn-login']")
     private WebElement signInButton;
     public void setEmail(String email) {
         emailBox.sendKeys(email);
@@ -43,38 +49,47 @@ public class ProfilPage {
     }
 
     //Profile Page
-    @FindBy(xpath = "")
-    private WebElement uploadaPhotoButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
+    private WebElement profilPageShow;
+    @FindBy(xpath = "//input[@id='picture_id']")
+    private WebElement uploadImage;
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
     private WebElement profilPictureLogo;
     @FindBy(xpath = "")
     private WebElement popupProfilPictureCantChanged;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//h2[@class='swal2-title']")
     private WebElement popupProfilPictureSuccessfullyDeleted;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//label[@class='flex items-center justify-center h-12 gap-3 font-semibold text-white btn btn-ghost hover:text-black bg-error rounded-xl']")
     private WebElement removePhotoButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@class='btn btn-error text-white px-3 rounded-md text-center text-bold']")
     private WebElement deleteAccountButton;
-    @FindBy(xpath = "")
-    private WebElement settingButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
+    private WebElement accountSuccessDeleteShow;
+    @FindBy(xpath = "//label[@class='btn btn-wide btn-primary text-white']")
     private WebElement changePasswordButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[contains(.,'Old Password:')]")
     private WebElement popupPassword;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='old_password']")
     private WebElement oldPasswordBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='password']")
     private WebElement newPasswordBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='confirmPassword']")
     private WebElement confirmPasswordBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@class='btn btn-wide btn-primary text-white translate-y-1']")
     private WebElement submitButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
     private WebElement passwordSuccessfullyChangedShow;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
     private WebElement passwordFailedChangedShow;
-    public void clickUploadaPhotoButton() {
-        uploadaPhotoButton.click();
+    @FindBy(xpath = "//button[@class='btn btn-primary text-white px-3 py-2 rounded-md text-center text-bold']")
+    private WebElement submitButtonToAddImageonProfile;
+    public boolean verifyProfilPageShow() {
+        return profilPageShow.isDisplayed();
+    }
+    String pathImageProfil = System.getProperty("user.dir")+"\\src\\test\\resources\\input_files\\";
+    //String pathImageProfil = System.getProperty("user.dir")+"/src/test/resources/input_files/";
+    public void chooseUploadImage(String imageFile){
+        uploadImage.sendKeys(pathImageProfil+(imageFile));
     }
     public boolean verifyProfilPicture() {
         return profilPictureLogo.isDisplayed();
@@ -91,8 +106,8 @@ public class ProfilPage {
     public void clickDeleteAccountButton() {
         deleteAccountButton.click();
     }
-    public void clickSettingButton() {
-        settingButton.click();
+    public boolean verifyAccountSuccessDeleteShow() {
+        return accountSuccessDeleteShow.isDisplayed();
     }
     public void clickChangePasswordButton() {
         changePasswordButton.click();
@@ -117,6 +132,9 @@ public class ProfilPage {
     }
     public void verifyPasswordFailedChanged() {
         passwordFailedChangedShow.isDisplayed();
+    }
+    public void clickSubmitButtonToAddImageonProfile() {
+        submitButtonToAddImageonProfile.click();
     }
 
 

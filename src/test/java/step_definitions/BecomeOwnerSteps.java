@@ -1,6 +1,7 @@
 package step_definitions;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.example.pageObject.BecomeOwnerPage;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public class BecomeOwnerSteps {
     }
 
     //Become Owner 1
-    @When("hoster click 'Profil' buttons")
+    @And("hoster click 'Profil' buttons")
     public void clickProfilLogoDropdowns() {
         BecomeOwnerPage becomeOwnerPage = new BecomeOwnerPage(webDriver);
         becomeOwnerPage.clickProfilDropdowns();
@@ -27,6 +28,16 @@ public class BecomeOwnerSteps {
     public void verifyBecomeOwnerPage() {
         BecomeOwnerPage becomeOwnerPage = new BecomeOwnerPage(webDriver);
         becomeOwnerPage.verifyverifyBecomeOwnerShow();
+    }
+    @Then("user choose valid image from explorers \"(.*)\"")
+    public void userChooseValidImageFromExplorers(String imageFile) {
+        BecomeOwnerPage becomeOwnerPage = new BecomeOwnerPage(webDriver);
+        becomeOwnerPage.chooseUploadKTP(imageFile);
+    }
+    @Then("user choose invalid image from explorers \"(.*)\"")
+    public void userChooseInvalidImageFromExplorers(String imageFile) {
+        BecomeOwnerPage becomeOwnerPage = new BecomeOwnerPage(webDriver);
+        becomeOwnerPage.chooseUploadKTP(imageFile);
     }
     @And("click 'Become Owner' buttons")
     public void clickBecomeOwnerButton() {
@@ -52,10 +63,7 @@ public class BecomeOwnerSteps {
         BecomeOwnerPage becomeOwnerPage = new BecomeOwnerPage(webDriver);
         becomeOwnerPage.clickCancelButton();
     }
-    @And("no picture uploaded")
-    public void verifyNoPictureUploaded() {
-        BecomeOwnerPage becomeOwnerPage = new BecomeOwnerPage(webDriver);
-        becomeOwnerPage.verifyverifyBecomeOwnerShow();
-    }
+
+
 
 }

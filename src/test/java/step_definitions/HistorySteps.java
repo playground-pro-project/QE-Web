@@ -1,5 +1,6 @@
 package step_definitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,7 +17,7 @@ public class HistorySteps {
     }
 
     //History 1
-    @When("user clicks on \"(.*)\"")
+    @And("user clicks on \"(.*)\"")
     public void clickArenaName(String arena) {
         HistoryPage historyPage = new HistoryPage(webDriver);
         historyPage.arenaClick(arena);
@@ -100,9 +101,38 @@ public class HistorySteps {
         historyPage.clickCancelButton();
     }
 
+    //Review 1
+    @And("user click on lap bola Admin Jangan Dihapus venue")
+    public void userClickOnLapBolaAdminJanganDihapusVenue() throws InterruptedException {
+        HistoryPage historyPage = new HistoryPage(webDriver);
+        historyPage.clickLapBolaAdminJanganDihapusButton();
+        Thread.sleep(2000);
+    }
+    @And("user click on 'Review' buttons")
+    public void userClickOnReviewButtons() {
+        HistoryPage historyPage = new HistoryPage(webDriver);
+        historyPage.clickSubmitButton();
+    }
+    @When("'Add Review' pop up appears")
+    public void addReviewPopUpAppears() {
+        HistoryPage historyPage = new HistoryPage(webDriver);
+        historyPage.verifyReviewPopup();
+    }
+    @And("user click on stars and input \"(.*)\" on Review boxs")
+    public void userClickOnStarsAndInputOnReviewBoxs(String review) {
+        HistoryPage historyPage = new HistoryPage(webDriver);
+        historyPage.clickStarsPopup();
+        historyPage.setReview(review);
+    }
+    @Then("click on 'Submit' button")
+    public void clickOnSubmitButton() {
+        HistoryPage historyPage = new HistoryPage(webDriver);
+        historyPage.clickSubmitReviewButton();
+    }
 
 
+    @When("^user select \"([^\"]*)\" and \"([^\"]*)\" and click 'Reservation' buttons")
+    public void userSelectAndAndClickReservationButtons(String arg0, String arg1) {
 
-
-
+    }
 }

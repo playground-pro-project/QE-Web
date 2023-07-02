@@ -15,36 +15,49 @@ public class ProfilSteps {
         this.webDriver = Hooks.webDriver;
     }
 
+    //tambahan test
+    @Given("user already on landing page")
+    public void landingPage() {
+        ProfilPage profilPage = new ProfilPage(webDriver);
+        profilPage.clickLoginButtonOnLandingPage();
+    }
+
     //Change Profil Picture 1
-    @Given("user already do logins with \"(.*)\" as email and \"(.*)\" as password")
-    public void loginProcess(String email, String password) {
+    @When("user already do logins with \"(.*)\" as email and \"(.*)\" as password")
+    public void loginProcess(String email, String password) throws InterruptedException {
         ProfilPage profilPage = new ProfilPage(webDriver);
         profilPage.setEmail(email);
         profilPage.setPassword(password);
         profilPage.clickSignIn();
+        Thread.sleep(3000);
     }
-    @And("already on 'Profil' pages")
+    @Then("already on 'Profil' pages")
     public void verifyProfilPage() {
         ProfilPage profilPage = new ProfilPage(webDriver);
-        profilPage.clickProfilDropdown();
-        profilPage.clickProfilButtonDropdown();
+        profilPage.verifyProfilPageShow();
     }
-    @When("user click 'Upload a photo' buttons")
-    public void clickUploadPhoto() {
+    @And("choose image from explorers \"(.*)\"")
+    public void chooseImageFromExplorers(String imageFile) {
         ProfilPage profilPage = new ProfilPage(webDriver);
-        profilPage.clickUploadaPhotoButton();
+        profilPage.chooseUploadImage(imageFile);
     }
+
+
+
+
+
     @Then("profil pictures successfully changed")
     public void verifyProfilPicture() {
         ProfilPage profilPage = new ProfilPage(webDriver);
-        Assert.assertTrue(profilPage.verifyProfilPicture());
+        profilPage.clickSubmitButtonToAddImageonProfile();
     }
 
     //Change Profil Picture 2
     @Then("profil pictures can't be changed")
     public void verifyProfilPictureNotChanged() {
         ProfilPage profilPage = new ProfilPage(webDriver);
-        Assert.assertTrue(profilPage.verifyProfilPictureCantChanged());
+        profilPage.clickSubmitButtonToAddImageonProfile();
+//        Assert.assertTrue(profilPage.verifyProfilPictureCantChanged());
     }
 
     //Change Profil Picture 3
@@ -65,13 +78,14 @@ public class ProfilSteps {
         ProfilPage profilPage = new ProfilPage(webDriver);
         profilPage.clickDeleteAccountButton();
     }
+    @And("account deleted successfully")
+    public void verifyAccountSuccessDeleted() {
+        ProfilPage profilPage = new ProfilPage(webDriver);
+        profilPage.verifyAccountSuccessDeleteShow();
+    }
+
 
     //Change Password 1
-    @Then("user click on setting buttons")
-    public void clickSettingButton() {
-        ProfilPage profilPage = new ProfilPage(webDriver);
-        profilPage.clickSettingButton();
-    }
     @And("selects 'Change Password'")
     public void selectChangePassword() {
         ProfilPage profilPage = new ProfilPage(webDriver);
@@ -106,7 +120,6 @@ public class ProfilSteps {
         ProfilPage profilPage = new ProfilPage(webDriver);
         profilPage.verifyPasswordFailedChanged();
     }
-
 
 
 

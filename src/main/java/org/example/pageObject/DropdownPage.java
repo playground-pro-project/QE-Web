@@ -13,16 +13,18 @@ public class DropdownPage {
     }
 
     //Venue List Page for User
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//img[@id='avatar']")
     private WebElement profilLogoDropdown;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//li[@id='nav-profile']/a[@href='/profile']/a[.='Profile']")
     private WebElement profileButtonOnDropdown;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/mytransaction']/a[.='My Transaction']")
     private WebElement myTransactionButtonOnDropdown;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[.='Become Owner']")
     private WebElement BecomeOwnerButtonOnDropdown;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[.='Logout']")
     private WebElement logoutButtonOnDropdown;
+    @FindBy(xpath = "//button[@class='swal2-confirm swal2-styled swal2-default-outline']")
+    private WebElement popUpYesLogoutButton;
     public void clickProfilDropdown() {
         profilLogoDropdown.click();
     }
@@ -38,46 +40,55 @@ public class DropdownPage {
     public void clicklogoutButtonOnDropdown() {
         logoutButtonOnDropdown.click();
     }
+    public void clickpopUpYesLogoutButton() {
+        popUpYesLogoutButton.click();
+    }
 
     //Venue List Page for Hoster
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href='/myvenue']")
     private WebElement myVenueButtonOnDropdown;
     public void clickmyVenueButtonOnDropdown() {
         myVenueButtonOnDropdown.click();
     }
 
     //Profil Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
     private WebElement profilPageShow;
     public boolean verifyProfilPage() {
         return profilPageShow.isDisplayed();
     }
 
     //My Transaction Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-4xl font-semibold text-neutral uppercase']")
     private WebElement MyTransactionPageShow;
     public boolean verifyMyTransactionPage() {
         return MyTransactionPageShow.isDisplayed();
     }
 
     //Become Owner Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-4xl font-semibold text-neutral uppercase items-center']")
     private WebElement BecomeOwnerPageShow;
     public boolean verifyBecomeOwnerPage() {
         return BecomeOwnerPageShow.isDisplayed();
     }
 
     //Landing Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[@class='swal2-html-container']")
     private WebElement LandingPageShow;
     public boolean verifyLandingPage() {
         return LandingPageShow.isDisplayed();
     }
 
     //My Venue Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[@class='text-2xl font-bold']")
     private WebElement MyVenuePageShow;
     public boolean verifyMyVenuePage() {
         return MyVenuePageShow.isDisplayed();
     }
+
+
+
+
+
+
 }

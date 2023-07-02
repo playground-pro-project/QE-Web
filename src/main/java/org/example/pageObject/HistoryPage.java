@@ -19,11 +19,16 @@ public class HistoryPage {
         String productElement = "---"+ arenaName +"---";
         driver.findElement(By.xpath(productElement)).click();
     }
+    @FindBy(xpath = "//p[.='Basket200']")
+    private WebElement lapBolaAdminJanganDihapusButton;
+    public void clickLapBolaAdminJanganDihapusButton() {
+        lapBolaAdminJanganDihapusButton.click();
+    }
 
     //Venue Detail Page
     @FindBy(xpath = "")
     private WebElement venueDetailPageIdentity;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@class='w-full h-12 font-semibold text-white bg-primary rounded-xl']")
     private WebElement checkAvaibilityButton;
     public boolean verifyVenueDetailPageShow() {
         return venueDetailPageIdentity.isDisplayed();
@@ -76,6 +81,16 @@ public class HistoryPage {
     private WebElement historyPageIdentity;
     @FindBy(xpath = "")
     private WebElement cancelButton;
+    @FindBy(xpath = "")
+    private WebElement reviewButton;
+    @FindBy(xpath = "")
+    private WebElement reviewPopup;
+    @FindBy(xpath = "")
+    private WebElement starsPopup;
+    @FindBy(xpath = "")
+    private WebElement reviewBox;
+    @FindBy(xpath = "")
+    private WebElement submitReviewButton;
     public String verifyStatusOrderShow() {
         return statusOrder.getText();
     }
@@ -84,6 +99,21 @@ public class HistoryPage {
     }
     public void clickCancelButton() {
         cancelButton.click();
+    }
+    public void clickreviewButton() {
+        reviewButton.click();
+    }
+    public boolean verifyReviewPopup() {
+        return reviewPopup.isDisplayed();
+    }
+    public void clickStarsPopup() {
+        starsPopup.click();
+    }
+    public void setReview(String review) {
+        reviewBox.sendKeys(review);
+    }
+    public void clickSubmitReviewButton() {
+        submitReviewButton.click();
     }
 
     //Confirmation and Payment Page

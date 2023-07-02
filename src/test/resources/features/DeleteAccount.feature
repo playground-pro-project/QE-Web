@@ -2,9 +2,11 @@
 Feature: Delete Account
 
   Scenario: User want to delete account
-    Given user already do logins with "email.com" as email and "password" as password
+    Given user already on landing page
+    When user already do logins with "fsfaoseprb@exelica.com" as email and "@Aadmin87" as password
     And user click 'Profil' buttons
     And selects 'Profil'
     When 'Profil' pages is showed
     And click on 'Delete Account' buttons
-    Then user will redirected to 'Landing' pages
+    And account deleted successfully
+#    Then user will redirected to 'Landing' pages

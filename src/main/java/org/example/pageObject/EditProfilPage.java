@@ -37,24 +37,29 @@ public class EditProfilPage {
     }
 
     //Edit Profil Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
     private WebElement verifyEditProfilShow;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[.='Edit Profile']")
+    private WebElement EditProfilButton;
+    @FindBy(xpath = "//input[@id='fullname']")
     private WebElement nameBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='email']")
     private WebElement emailBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='phone']")
     private WebElement phoneBox;
     @FindBy(xpath = "")
     private WebElement addressBox;
     @FindBy(xpath = "")
     private WebElement bioBox;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@class='btn btn-primary text-white px-3 py-2 rounded-md text-center text-bold']")
     private WebElement saveButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-[#291334] text-5xl tracking-wider font-bold text-center']")
     private WebElement successPopup;
     public void verifyEditProfil() {
         verifyEditProfilShow.isDisplayed();
+    }
+    public void clickEditProfilButtons() {
+        EditProfilButton.click();
     }
     public void setName(String email) {
         nameBox.sendKeys(email);

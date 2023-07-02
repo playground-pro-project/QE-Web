@@ -13,9 +13,9 @@ public class BecomeOwnerPage {
     }
 
     //Dropdown
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[.='Become Owner']")
     private WebElement becomeOwnerButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//img[@id='avatar']")
     private WebElement profilLogoDropdown;
     public void clickProfilDropdowns() {
         profilLogoDropdown.click();
@@ -25,18 +25,24 @@ public class BecomeOwnerPage {
     }
 
     //Become Owner Page
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-4xl font-semibold text-neutral uppercase items-center']")
     private WebElement verifyBecomeOwnerShow;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@id='profile_picture']")
+    private WebElement uploadKTP;
+    @FindBy(xpath = "//button[@class='btn bg-primary w-48 h-8 text-white rounded-lg']")
     private WebElement submitBecomeOwnerButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@class='btn bg-gray-500 w-48 text-white rounded-lg']")
     private WebElement cancelButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-4xl font-semibold text-neutral uppercase items-center']")
     private WebElement popupSuccessUploadKTP;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//p[@class='text-4xl font-semibold text-neutral uppercase items-center']")
     private WebElement popupFailedUploadKTP;
     public boolean verifyverifyBecomeOwnerShow() {
         return verifyBecomeOwnerShow.isDisplayed();
+    }
+    String pathImageKTP = System.getProperty("user.dir")+"\\src\\test\\resources\\input_files\\";
+    public void chooseUploadKTP(String imageFile){
+        uploadKTP.sendKeys(pathImageKTP+(imageFile));
     }
     public void clicksubmitBecomeOwnerButton() {
         submitBecomeOwnerButton.click();

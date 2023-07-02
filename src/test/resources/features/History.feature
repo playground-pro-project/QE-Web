@@ -2,8 +2,9 @@
 Feature: History
 
   Scenario Outline: User want to check their pending reservation if they have done booking
-    Given user already do logins with "email.com" as email and "password" as password
-    When user clicks on "<arena>"
+    Given user already on landing page
+    When user already do logins with "email.com" as email and "password" as password
+    And user clicks on "<arena>"
     And redirected to 'Venue Detail' pages
     Then user click on 'Check Avaibility' buttons
     And redirected to 'Check Venue Avaibility' pages
@@ -20,8 +21,9 @@ Feature: History
       |       |       |       |        |
 
   Scenario Outline: User want to check their pending reservation if they have not done booking
-    Given user already do logins with "email.com" as email and "password" as password
-    When user click 'Profil' buttons
+    Given user already on landing page
+    When user already do logins with "email.com" as email and "password" as password
+    And user click 'Profil' buttons
     And selects 'My Transaction'
     And 'History' pages is showed
     Then Reservation with status "<status>" will appears
@@ -30,8 +32,9 @@ Feature: History
       |        |
 
   Scenario Outline: User want to check their history if they have success reservation
-    Given user already do logins with "email.com" as email and "password" as password
-    When user clicks on "<arena>"
+    Given user already on landing page
+    When user already do logins with "email.com" as email and "password" as password
+    And user clicks on "<arena>"
     And redirected to 'Venue Detail' pages
     Then user click on 'Check Avaibility' buttons
     And redirected to 'Check Venue Avaibility' pages
@@ -52,8 +55,9 @@ Feature: History
       |       |       |       |        |       |      |
 
   Scenario Outline: User want to check their history if they have not had success reservation
-    Given user already do logins with "email.com" as email and "password" as password
-    When user click 'Profil' buttons
+    Given user already on landing page
+    When user already do logins with "email.com" as email and "password" as password
+    And user click 'Profil' buttons
     And selects 'My Transaction'
     And 'My Transaction' pages is showed
     Then Reservation with status "<status>" will appears
@@ -62,8 +66,9 @@ Feature: History
       |        |
 
   Scenario Outline: User want to cancel reservation if they have done booking
-    Given user already do logins with "email.com" as email and "password" as password
-    When user clicks on "<arena>"
+    Given user already on landing page
+    When user already do logins with "email.com" as email and "password" as password
+    And user clicks on "<arena>"
     And redirected to 'Venue Detail' pages
     Then user click on 'Check Avaibility' buttons
     And redirected to 'Check Venue Avaibility' pages
