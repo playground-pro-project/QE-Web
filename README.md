@@ -22,7 +22,7 @@ PlayGround Pro have tags: Effortlessly find and reserve the perfect sport venue.
 - 🔎 [Automation Web](https://github.com/playground-pro-project/QE-Web)
 
 ## Report
-<img width="110%" src="./src/test/resources/input_files/WebAutomationReport.jpg"><br/>
+<img width="200%" src="./src/test/resources/input_files/WebAutomationReport.jpg"><br/>
 
 ## Tools
 <div>
