@@ -27,8 +27,9 @@ PlayGround Pro have tags: Effortlessly find and reserve the perfect sport venue.
 ## Tools
 <div>
 <p>Manual Testing</p>
+      <a><img src="https://img.shields.io/badge/-Google%20Chrome-181717?style=for-the-badge&logo=GoogleChrome&color=121B4F&logoColor=white"></a>
+      <p>Test Case Management</p>
       <a><img src="https://img.shields.io/badge/-Google%20Spreadsheet-181717?style=for-the-badge&logo=GoogleChrome&color=121B4F&logoColor=white"></a>
-      <img src="https://img.shields.io/badge/-Postman-181717?style=for-the-badge&logo=postman&color=121B4F&logoColor=white">
       <p>Automation Testing</p>
       <img src="https://img.shields.io/badge/-java-181717?style=for-the-badge&logo=java&color=121B4F">
       <img src="https://img.shields.io/badge/-Apache%20Maven-181717?style=for-the-badge&logo=Apache%20Maven&color=121B4F&logoColor=white">
