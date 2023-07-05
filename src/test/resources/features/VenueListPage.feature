@@ -1,4 +1,4 @@
-@VenueListPage
+@Test @VenueListPage
   Feature: Venue List Page
     Scenario: Click on the first venue
       Given User already login

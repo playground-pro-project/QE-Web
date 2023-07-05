@@ -1,4 +1,4 @@
-@LoginPage
+@Test @LoginPage
   Feature: Login Page
 
     Scenario: Sign up button on login page work

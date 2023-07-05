@@ -1,8 +1,8 @@
-@RegisterPage
+@Test @RegisterPage
   Feature: Register page
     Scenario: Register user with valid data
       Given User already on register page
-      When User input "qa web" as fullName and input "088013697598" as phone and input "uhuhuhu@test.com" as email and input "Password123@" as password and input "Password123@" as confirmPassword
+      When User input "qa web" as fullName and input "08988888777" as phone and input "qefighting@test.cm" as email and input "Password123@" as password and input "Password123@" as confirmPassword
       Then User click register button
       And Verify register success
 

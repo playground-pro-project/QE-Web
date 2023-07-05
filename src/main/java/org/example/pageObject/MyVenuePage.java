@@ -21,10 +21,8 @@ public class MyVenuePage {
     private WebElement venueNameBox;
     @FindBy(xpath = "//textarea[@id='description']")
     private WebElement descriptionBox;
-    @FindBy(xpath = "//div[@class='flex items-center justify-center w-full text-2xl font-semibold text-darkBlue']")
+    @FindBy(xpath = "")
     private WebElement successAddVenueShow;
-//    @FindBy(xpath = "//input[@id='location']")
-//    private WebElement locationBox;
     @FindBy(xpath = "//button[@class='w-32 text-white btn btn-primary']")
     private WebElement submitButtonMyVenuePage;
     @FindBy(xpath = "//div[@class='flex flex-wrap justify-center gap-5 p-5']/div[1]//p[@class='mt-2 text-2xl font-bold text-oren']")

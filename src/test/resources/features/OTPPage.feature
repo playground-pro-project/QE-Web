@@ -1,4 +1,4 @@
-@OTPPage
+@Test @OTPPage
   Feature: OTP Page
     Scenario: OTP Page Invalid
       Given User already on OTP page

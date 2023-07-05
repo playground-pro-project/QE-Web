@@ -9,4 +9,3 @@ Feature: Delete Account
     When 'Profil' pages is showed
     And click on 'Delete Account' buttons
     And account deleted successfully
-#    Then user will redirected to 'Landing' pages

@@ -3,7 +3,7 @@ Feature: History
 
   Scenario Outline: User want to check their pending reservation if they have done booking
     Given user already on landing page
-    When user already do logins with "email.com" as email and "password" as password
+    When user already do logins with "fsfaoseprb@exelica.com" as email and "@Aadmin87" as password
     And user clicks on "<arena>"
     And redirected to 'Venue Detail' pages
     Then user click on 'Check Avaibility' buttons
@@ -22,7 +22,7 @@ Feature: History
 
   Scenario Outline: User want to check their pending reservation if they have not done booking
     Given user already on landing page
-    When user already do logins with "email.com" as email and "password" as password
+    When user already do logins with "fsfaoseprb@exelica.com" as email and "@Aadmin87" as password
     And user click 'Profil' buttons
     And selects 'My Transaction'
     And 'History' pages is showed
@@ -33,7 +33,7 @@ Feature: History
 
   Scenario Outline: User want to check their history if they have success reservation
     Given user already on landing page
-    When user already do logins with "email.com" as email and "password" as password
+    When user already do logins with "fsfaoseprb@exelica.com" as email and "@Aadmin87" as password
     And user clicks on "<arena>"
     And redirected to 'Venue Detail' pages
     Then user click on 'Check Avaibility' buttons
@@ -56,7 +56,7 @@ Feature: History
 
   Scenario Outline: User want to check their history if they have not had success reservation
     Given user already on landing page
-    When user already do logins with "email.com" as email and "password" as password
+    When user already do logins with "fsfaoseprb@exelica.com" as email and "@Aadmin87" as password
     And user click 'Profil' buttons
     And selects 'My Transaction'
     And 'My Transaction' pages is showed
@@ -67,7 +67,7 @@ Feature: History
 
   Scenario Outline: User want to cancel reservation if they have done booking
     Given user already on landing page
-    When user already do logins with "email.com" as email and "password" as password
+    When user already do logins with "fsfaoseprb@exelica.com" as email and "@Aadmin87" as password
     And user clicks on "<arena>"
     And redirected to 'Venue Detail' pages
     Then user click on 'Check Avaibility' buttons

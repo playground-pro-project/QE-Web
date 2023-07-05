@@ -9,7 +9,6 @@ Feature: Edit Profile
    And click 'Edit Profil' button
    And user already on 'Edit Profil' pages
    And user inputs "<name>" as Name, "<email>" as Email, "<phone>" as Phone
-#   And inputs "<address>" as Address, "<bio>" as Bio
    Then user click on save buttons
    And user's new profils will be saved
    Examples:
@@ -24,7 +23,6 @@ Feature: Edit Profile
    And user already on 'Edit Profil' pages
    And click 'Edit Profil' button
    And user inputs "<name>" as Name and "<phone>" as Phone
-#   And inputs "<address>" as Address, "<bio>" as Bio
    Then user click on save buttons
    And user's new profils will be saved
    Examples:

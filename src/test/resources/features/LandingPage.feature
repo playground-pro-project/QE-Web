@@ -1,4 +1,4 @@
-@LandingPage
+@Test @LandingPage
   Feature: Landing page
 
     Scenario: User click login button on landing page

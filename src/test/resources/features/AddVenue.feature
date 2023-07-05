@@ -8,7 +8,6 @@ Feature: Add Venue
     And click on 'My Venue' buttons
     Then hoster click on 'Add Venue' buttons
     And 'Add Venue' pop up will showed
-#    When hoster input "Lapangan Basket Delta 4" as Venue Name, "Bersih&Luas 4" as Description, and choose locations
     When input "Lapangan Basket Delta 4" as venue name, "Bersih&Luas 4" as Description, and choose locations
     Then hoster click 'Submit' button
     And Venue can be added
